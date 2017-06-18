@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Include meta tag to ensure proper rendering and touch zooming -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Include jQuery Mobile stylesheets -->
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+    <!-- Include the jQuery library -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <!-- Include the jQuery Mobile library -->
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/jsapirx.js"></script>
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyDfDnrrxITubUp4NgDCF8wQH119Ghlxa98&libraries=places"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+</head>
+
+<body>
+    <div data-role="page" id="page1">
+        <div data-role="panel" id="panel1">
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#page2" class="ui-btn ui-icon-info ui-btn-icon-left" data-transition="slide">version</a></li>
+            </ul>
+        </div>
+        <div data-role="header">
+            <a href="#panel1" class="ui-btn ui-corner-all ui-shadow ui-shadow ui-icon-bars ui-btn-icon-left">Menu</a>
+            <h1>Kaohsiung Tourism</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <a href="#page4" class="ui-btn ui-corner-all ui-shadow ui-icon-cloud ui-btn-icon-left">Open Data</a>
+            <a href="#page5" class="ui-btn ui-corner-all ui-shadow ui-icon-location ui-btn-icon-left">Position</a>
+            <a href="#page6" class="ui-btn ui-corner-all ui-shadow ui-icon-camera ui-btn-icon-left">Views</a>
+            <a href="#page7" class="ui-btn ui-corner-all ui-shadow ui-icon-cloud ui-btn-icon-left">Distance</a>
+            <a href="#page8" class="ui-btn ui-corner-all ui-shadow ui-icon-cloud ui-btn-icon-left">Place</a>
+        </div>
+        <div data-role="footer">
+            <h1>SmallWhite</h1>
+        </div>
+    </div>
+    <div data-role="page" data-dialog="true" id="page2">
+        <div data-role="header">
+            <h1>SmallWhite Version</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <p>SmallWhite-2.0.1</p>
+        </div>
+        <div data-role="footer">
+            <a data-rel="back" class="ui-btn">back</a>
+        </div>
+    </div>
+    <!-- Demo opendata -->
+    <div data-role="page" id="page4">
+        <div data-role="header">
+            <a data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-icon-carat-l ui-btn-icon-left">back</a>
+            <h1>Views</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div id="demo">
+                <img id="p1_img" src="img/cloud_load1.gif" width="100%" />
+            </div>
+        </div>
+    </div>
+    <div data-role="page" id="page4_1">
+        <div data-role="header">
+            <a data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-icon-carat-l ui-btn-icon-left">back</a>
+            <h1>Views</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div id="viewdes">
+            	<div id="viewpic" width="100%" align="center"></div>
+            	<div id="showviewdes"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Demo Location-->
+    <div data-role="page" id="page5">
+        <div data-role="header">
+            <a data-rel="back" class="ui-btn ui-icon-carat-l ui-btn-icon-left">back</a>
+            <h1>Location</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div id="demolocation"></div>
+            <div id="locationimg"></div>
+        </div>
+    </div>
+    <div data-role="page" id="page6">
+        <div data-role="header">
+            <a data-rel="back" class="ui-btn ui-icon-carat-l ui-btn-icon-left">back</a>
+            <h1>Show Views On Map</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div id="demoviews">
+                <img id="p1_img" src="img/cloud_load1.gif" width="100%" />
+            </div>
+            <div id="errormes"></div>
+        </div>
+    </div>
+    <div data-role="page" id="page7">
+        <div data-role="header">
+            <a data-rel="back" class="ui-btn ui-icon-carat-l ui-btn-icon-left">back</a>
+            <h1>Show Views By Distance</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div id="slider">
+                <text>range</text>
+                <input type="range" name="points" id="points" value="1" min="0" max="50" data-popup-enabled="true">
+                <a id='showviewbutton' class="ui-btn ui-icon-camera ui-btn-icon-top">Show</a>
+            </div>
+            <div id="showviewdiv"></div>
+        </div>
+    </div>
+    <div data-role="page" id="page8">
+        <div data-role="header">
+            <a data-rel="back" class="ui-btn ui-icon-carat-l ui-btn-icon-left">back</a>
+            <h1>Show Place And Directions</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div id="p7_slider">
+                <text>range</text>
+                <input type="range" name="points" id="p7_points" value="1" min="0" max="50" data-popup-enabled="true">
+                <a id='p7_showviewbutton' class="ui-btn ui-icon-camera ui-btn-icon-top">Show</a>
+            </div>
+            <div>
+                <div id="showviewplace"></div>
+                <div>
+                    <div id="textdirection"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
